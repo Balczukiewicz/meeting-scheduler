@@ -57,6 +57,7 @@ public class MeetingApplicationServiceImpl implements MeetingApplicationService 
         return meetingDtoMapper.toMeetingResponseDto(meeting);
     }
 
+    @Override
     public MeetingResponseDto initializeMeeting(UUID id) {
         Meeting meeting = meetingRepository.findById(id)
                 .orElseThrow(() -> new MeetingNotFoundException(id));
